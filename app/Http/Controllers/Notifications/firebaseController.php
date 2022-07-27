@@ -33,7 +33,7 @@ class firebaseController extends Controller
             if ($notification) {
                 if (session()->get('lang') == 'ar') {
                     Larafirebase::withTitle($data['title_ar'])
-                        ->withBody($data['content_content'])
+                        ->withBody($data['content_ar'])
                         ->sendMessage([$token]);
                 } else {
                     Larafirebase::withTitle($data['title'])

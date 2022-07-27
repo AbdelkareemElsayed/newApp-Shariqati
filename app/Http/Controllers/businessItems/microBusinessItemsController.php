@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\businessItems;
 
 use App\Http\Controllers\Controller;
-use App\Models\dashboard\items\items_second_level;
+use App\Models\dashboard\items\items_third_level;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Notifications\firebaseController;
@@ -12,18 +12,18 @@ use App\Http\Requests\bussinesItemsRequest;
 
 
 
-class subBusinessItemsController extends Controller
+class microBusinessItemsController extends Controller
 {
 
 
-    public function loadISubtems($id)
+    public function loadItems($id)
     {
 
-        session()->put('item_id',$id);
+       session()->put('sub_item_id',$id);
 
-       $items = items_second_level :: where('item_id',$id)->orderBy('id', 'desc')->get();
-       $title = 'الاعمال الفرعية';
-       return view('dashboard.itemsbusiness.itemsLevelTwo.index', ['data' => $items, 'title' => $title]);
+       $items = items_third_level :: where('second_item_id',$id)->orderBy('id', 'desc')->get();
+       $title = 'بنود الاعمال الفرعية';
+       return view('dashboard.itemsbusiness.itemsLevelThree.index', ['data' => $items, 'title' => $title]);
     }
 
 
@@ -47,7 +47,7 @@ class subBusinessItemsController extends Controller
     public function create()
     {
         $title = 'أضافة بند عمل فرعي';
-        return view('dashboard.itemsbusiness.itemsLevelTwo.add', ['title' => $title]);
+        return view('dashboard.itemsbusiness.itemsLevelThree.add', ['title' => $title]);
     }
 
     /**
@@ -62,10 +62,10 @@ class subBusinessItemsController extends Controller
 
 
         # Set Items ID . .
-        $data['item_id'] = session()->get('item_id');
+        $data['second_item_id'] = session()->get('sub_item_id');
 
         // Add Items Level one . . .
-        $items = items_second_level::create($data);
+        $items = items_third_level::create($data);
 
          if($items){
             # Log to database
@@ -74,14 +74,14 @@ class subBusinessItemsController extends Controller
 
             $tokens = admin::pluck('fcm_token')->toArray();
             $data = ['title' => 'items', 'content' => 'businessItem added', 'title_ar' => 'بنود الاعمال', 'content_ar' => 'تم اضافة بند جديد'];
-           // firebaseController::notifyUsers($tokens, $data);
+            firebaseController::notifyUsers($tokens, $data);
 
             session()->flash('message', trans('admin.add_op_succ'));
         } else {
             session()->flash('error_message', trans('admin.add_op_faild'));
         }
 
-        return redirect(aurl('SubItemsLevel/'.session()->get('item_id')));
+        return redirect(aurl('LoadMicroItemsLevel/'.session()->get('sub_item_id')));
     }
 
 
@@ -104,10 +104,10 @@ class subBusinessItemsController extends Controller
      */
     public function edit($id)
     {
-        $data =  items_second_level :: where('id', $id)->orderBy('id', 'desc')->get();
+        $data =  items_third_level :: where('id', $id)->orderBy('id', 'desc')->get();
 
-         $title = 'تعديل البند';
-        return view('dashboard.itemsbusiness.itemsLevelTwo.edit', ['data' => $data, 'title' => $title ]);
+         $title = trans('admin.editItems');
+        return view('dashboard.itemsbusiness.itemsLevelThree.edit', ['data' => $data, 'title' => $title ]);
     }
 
     /**
@@ -120,11 +120,11 @@ class subBusinessItemsController extends Controller
     public function update(bussinesItemsRequest $request, $id)
     {
         $data = $request->except(['_token', '_method']);
-        $oldData = items_second_level::find($id);
+        $oldData = items_third_level::find($id);
 
 
         // Update Items level one . . .
-        $op = items_second_level::where('id', $id)->update($data);
+        $op = items_third_level::where('id', $id)->update($data);
 
         if($op){
         # Log to database
@@ -132,7 +132,7 @@ class subBusinessItemsController extends Controller
         $log = logCreated($userType, auth('admin')->user()->id, 'items', 'Items Updated', json_encode($data));
 
         $tokens = admin::pluck('fcm_token')->toArray();
-        $data = ['title' => 'items', 'content' => 'items updated', 'title_ar' => ' بنود الاعمال', 'content_ar' => 'تم تحديث بنود الاعمال '];
+        $data = ['title' => 'items', 'content' => 'Course updated', 'title_ar' => ' بنود الاعمال', 'content_ar' => 'تم تحديث بنود الاعمال '];
         firebaseController::notifyUsers($tokens, $data);
 
         session()->flash('message', trans('admin.add_op_succ'));
@@ -141,7 +141,7 @@ class subBusinessItemsController extends Controller
 
         }
 
-        return redirect(aurl('LoadBusinessItemsUnits/'.session()->get('item_id')));
+        return redirect(aurl('LoadMicroItemsLevel/'.session()->get('sub_item_id')));
     }
 
     /**
@@ -152,11 +152,11 @@ class subBusinessItemsController extends Controller
      */
     public function destroy($id)
     {
-         $data = items_second_level::find($id);
+         $data = items_third_level::find($id);
         $succ_op   = trans('admin.del.op_succ');
         $failed_op = trans('admin.del.op_faild');
 
-        $delete_item = items_second_level::find($id)->delete();
+        $delete_item = items_third_level::find($id)->delete();
 
         if ($delete_item) {
             # Log to database
@@ -173,6 +173,6 @@ class subBusinessItemsController extends Controller
             session()->flash('error_message', $failed_op);
         }
 
-        return redirect(aurl('LoadBusinessItemsUnits/'.session()->get('item_id')));
+        return redirect(aurl('LoadMicroItemsLevel/'.session()->get('sub_item_id')));
     }
 }

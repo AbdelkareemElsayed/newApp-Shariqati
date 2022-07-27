@@ -190,7 +190,7 @@
    'register'    => 'تسجيل عضوية',
    'read_more'   => 'قرأه المزيد',
    'Latest_News' => 'أحدث الاخبار',
- 
+
  'project_done'      =>  'المشاريع المنتهية',
 'permenant_clients' =>  'عملائنا',
 'owned_vehicles'    =>   'وسيلة نقل',
@@ -198,15 +198,15 @@
 'day_w'             =>  'ايام العمل',
 'day_off'           =>  'ايام العطلة',
 'our_services'      =>  'خدماتنا',
-'op_h'              =>  'ساعات العمل', 
+'op_h'              =>  'ساعات العمل',
 'closed'            =>  'مغلق',
 'contact_us'        =>  'تواصل معانا',
 'service_slogan'    => 'عنوان الخدمات',
 'blog'              => 'المقالات',
 'blog_slogan'       => 'عنوان المقالات',
- 
- 
- 
+
+
+
  'f_name'            => 'الاسم كامل',
 'd_from'            => 'مكان التحرك',
 'd_to'              => 'مكان التوقف',
@@ -223,7 +223,7 @@
 'u_links'         => 'Usefull Links',
 'Get_quote_Renovation'       => 'Get a quote on Renovation',
 'our_adv'         => 'مميزتنا',
-'track_shipment'  => 'مسار الشحنة', 
+'track_shipment'  => 'مسار الشحنة',
 'air_track'       => 'تتبع الشحن الجوي',
 'track_id'        => 'رقم الشحنة',
 'track'           => 'تتبع',
@@ -245,7 +245,7 @@
 'Quick_Feedback'    => 'اترك لنا رأيك',
 'Corporate_Office'  => 'مقر الشركة',
 'Telephone_No'      => 'رقم التليفون',
-'Fax_No'            => 'رقم الفاكس', 
+'Fax_No'            => 'رقم الفاكس',
 'Section_Office'    => 'مقر المكتب',
 'Always_with'       => 'نحن دائما',
 'you'               => 'معك',
@@ -280,7 +280,7 @@
 'destination'       => 'الجهة',
 'origene'           => 'المنشأ',
 'content'           => 'المحتوي',
-'shipping_date'     => 'تاريخ الشحن', 
+'shipping_date'     => 'تاريخ الشحن',
 'shippinge_due'     => 'تاريخ الوصول',
 'messages_shipping' => 'رسائل استفسار الشحن',
 'destination_to'    => 'متجهة الي',
@@ -292,7 +292,7 @@
 'TechnicalSupportcontrol' => 'التحكم في الدعم الفني',
 'TechnicalSupport'  => 'الدعم الفني',
 'add_reply'         => 'أضافة رد',
-'reply'             => 'رد',   
+'reply'             => 'رد',
 'c_care'            => 'الدعم الفني',
 'no_reply'          => 'لا يوجد رد',
 'c_register'        => 'تسجيل عضوية',
@@ -311,7 +311,7 @@
  'you2'             => 'انت',
  'f_p'              => 'هل نسيت كلمة المرور ؟',
  'citycontrol'      => 'التجكم في المدن',
-  
+
  'citycontrol'             => 'التحكم في المدن',
  'city_name'               => 'اسم المدينة',
  'governoratescontrol'     => 'التحكم في المحافظات',
@@ -339,7 +339,7 @@
    'work_time'             => 'اوقات العمل',
    'from'                  => 'من',
    'to'                    => 'الي',
-   'governorate'           => 'المحافظة', 
+   'governorate'           => 'المحافظة',
    'specialize'            => 'التخصص',
    'image'                 => 'الصورة',
    'controlSpecialize'     => 'التحكم في التخصصات',
@@ -353,46 +353,47 @@
  'addhospital'             => 'أضافة مستشفي',
   'labs'                   => 'المعامل',
   'hospitals'              => 'المستشفيات',
-  
+
  'controlray'         => 'التحكم في الاشعة',
  'addray'             => 'أضافة اشعة',
  'rays'               => 'الاشعة',
  'generate_users'     => 'اضافة اعضاء',
-  
-  
-  
-  
-  
-  
-  
-  
-'settingscontrol'  => 'التحكم في الاعدادات',
-'instgram'         => 'الانستجرام',
-'telegram'         => 'التليجرام',
-'snapchat'         => 'سناب شات',
-'ticktook'         => 'تيك توك',
-'fa_icon'          => 'ايقونه الموقع',
-'departmentscontrol' =>  'التحكم في الاقسام',
-'userscontrol'     => 'التحكم في الاعضاء',
-'permission'       => 'الصلاحيات',
-'controlmodules'   => 'التحكم في الموديولات',
-'Modulescontrol'   => 'التحكم في الموديولات',
-'add_module'       => 'أضافة موديول',
-'text_en'          => 'عنوان الموديول(en)',
-'text_ar'          =>'عنوان الموديول(عربي)',
 
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+'settingscontrol'    => 'التحكم في الاعدادات',
+'instgram'           => 'لانستجرام',
+'telegram'           => 'التليجرام',
+'snapchat'           => 'سناب شات',
+'ticktook'           => 'تيك توك',
+'fa_icon'            => 'ايقونه الموقع',
+'departmentscontrol' => 'التحكم في الاقسام',
+'userscontrol'       => 'التحكم في الاعضاء',
+'permission'         => 'الصلاحيات',
+'controlmodules'     => 'التحكم في الموديولات',
+'Modulescontrol'     => 'التحكم في الموديولات',
+'add_module'         => 'أضافة موديول',
+'text_en'            => 'عنوان الموديول(en)',
+'text_ar'            => 'عنوان الموديول(عربي)',
+'title'              => 'العنوان',
+'details'            => 'التفاصيل',
+'Save'               => 'حفظ',
+'detail'             => 'التفاصيل',
+
+
+
+
+
+
+
+
+
+
   ];
-    
-    
+
+

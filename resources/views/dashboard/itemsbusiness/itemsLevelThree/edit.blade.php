@@ -34,7 +34,7 @@
 
 
                         <div class="x_content">
-                            <form action="{{ aurl('MiniSubItemsLevel/' . $data[0]->id) }}" method="post"
+                            <form action="{{ aurl('MicroItemsLevel/' . $data[0]->id) }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('put')

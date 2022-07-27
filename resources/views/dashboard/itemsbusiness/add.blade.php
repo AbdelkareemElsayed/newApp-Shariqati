@@ -6,7 +6,7 @@
         <div class="">
             <div class="page-title">
                 <div class="title_left">
-                    <h3>{{ $title }}</h3>
+                    <h3> أضافة بند اعمال رئيسي</h3>
                 </div>
 
                 <div class="title_right">
@@ -37,7 +37,7 @@
                             <form action="{{ aurl('BusinessItems') }}" method="post" enctype="multipart/form-data">
                                 @csrf
 
-                                <span class="section">Add BusinessItems</span>
+                                <span class="section">أضافة بند اعمال رئيسي</span>
 
                                 <div class="field item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3  label-align"

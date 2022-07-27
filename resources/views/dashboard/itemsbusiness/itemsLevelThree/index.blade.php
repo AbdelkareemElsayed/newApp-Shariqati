@@ -29,8 +29,8 @@
           <div class="x_title">
             <h2>{{ $title }} <small>{{ $title }}</small></h2>
             <ul class="nav navbar-right panel_toolbox">
-              <li><a href="{{ aurl('MiniSubItemsLevel/create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>
-                  {{ __('admin.MiniSubItemsLevel') }}</a>
+              <li><a href="{{ aurl('MicroItemsLevel/create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>
+                  {{ __('admin.MicroItemsLevel') }}</a>
               </li>
             </ul>
 
@@ -70,16 +70,13 @@
                         <td class=" ">{!! $value->content !!}</td>
 
 
-                      <td>
-                        <a href="{{ aurl('MiniSubItemsLevel/' . $value->id  ) }}"
-                            class="btn btn-info">{{ trans('admin.Flashsale') }}</a>
-                       </td>
+
 
 
                       <td class=" last">
                         <a data-toggle="modal" data-target=".bs-example-modal-lg{{ $value->id }}"
                           class="btn btn-danger">{{ trans('admin.delete') }}</a>
-                        <a href="{{ aurl('MiniSubItemsLevel/' . $value->id . '/edit') }}"
+                        <a href="{{ aurl('MicroItemsLevel/' . $value->id . '/edit') }}"
                           class="btn btn-info">{{ trans('admin.edit') }}</a> </a>
                       </td>
                     </tr>
@@ -96,7 +93,7 @@
                             </button>
                           </div>
 
-                          <form action="{{ aurl('MiniSubItemsLevel/' . $value->id) }}" method="post">
+                          <form action="{{ aurl('MicroItemsLevel/' . $value->id) }}" method="post">
                             @csrf
                             @method('delete')
 

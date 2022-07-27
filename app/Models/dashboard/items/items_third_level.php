@@ -11,14 +11,14 @@ class items_third_level extends Model
 
     protected $table = 'items_level_three';
 
-    protected $fillable = ['title','content','admin_id','items_level_two'];
+    protected $fillable = ['title','content','admin_id','second_item_id'];
 
 
 
      # Relation with item_level_two table
         public function item_level_two()
         {
-            return $this->belongsTo('App\Models\dashboard\items\items_second_level','items_level_two');
+            return $this->belongsTo('App\Models\dashboard\items\items_second_level','second_item_id');
         }
 
 

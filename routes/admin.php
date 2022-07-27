@@ -40,6 +40,7 @@ use App\Http\Controllers\ecommerceModules\ProductsCategoriesController;
 use App\Http\Controllers\ecommerceModules\productsController;
 use App\Http\Controllers\businessItems\BusinessItemsController;
 use App\Http\Controllers\businessItems\ItemsFlashsaleController;
+use App\Http\Controllers\businessItems\microBusinessItemsController;
 use App\Http\Controllers\businessItems\subBusinessItemsController;
 use App\Models\User;
 use  App\Http\Controllers\invoices\invoiceController;
@@ -136,6 +137,11 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('LoadBusinessItemsUnits/{id}', [subBusinessItemsController :: class,'loadISubtems']);
 
             Route::resource('SubItemsLevel', subBusinessItemsController :: class);
+
+
+
+            Route::get('LoadMicroItemsLevel/{id}', [microBusinessItemsController::class,'loadItems']);
+            Route::resource('MicroItemsLevel', microBusinessItemsController::class);
 
 
         #######################################################################################################################

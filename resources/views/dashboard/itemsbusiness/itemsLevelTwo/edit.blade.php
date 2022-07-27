@@ -39,7 +39,7 @@
                                 @csrf
                                 @method('put')
 
-                                <span class="section">Edit BusinessItems</span>
+                                <span class="section">تعديل الاعمال الفرعية</span>
 
                                 <input type="hidden" name="id" value="{{ $data[0]->id }}">
 
@@ -67,7 +67,7 @@
                         <div class="ln_solid"></div>
                         <div class="form-group">
                             <div class="col-md-6 offset-md-3">
-                                <button type='submit' class="btn btn-primary">{{ __('admin.submit') }}</button>
+                                <button type='submit' class="btn btn-primary">{{ __('admin.Save') }}</button>
                             </div>
                         </div>
                         </form>

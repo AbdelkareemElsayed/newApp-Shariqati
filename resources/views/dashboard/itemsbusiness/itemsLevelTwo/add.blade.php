@@ -1,25 +1,26 @@
 @extends('dashboard.index')
 
-@section('content')
+  @section('content')
     <!-- page content -->
-    <div class="right_col" role="main">
-        <div class="">
-            <div class="page-title">
+     <div class="right_col" role="main">
+         <div class="">
+             <div class="page-title">
                 <div class="title_left">
-                    <h3>{{ $title }}</h3>
-                </div>
+                     <h3>{{ $title }}</h3>
+                 </div>
 
-                <div class="title_right">
+              <div class="title_right">
                     <div class="col-md-5 col-sm-5 form-group pull-right top_search">
-                        <div class="input-group">
+                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-group-btn">
+                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">Go!</button>
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
+
 
 
             <div class="clearfix"></div>
@@ -37,14 +38,13 @@
 
                                 <span class="section">أضافة بند اعمال فرعي</span>
 
-                                <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align"
-                                        for="title">{{ __('admin.title') }}<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" name="title" value="{{ old('title') }}"
-                                            id="item_title" />
-                                    </div>
-                                </div>
+                                 <div class="field item form-group">
+                                    <label class="col-form-label col-md-3 col-sm-3  label-align" for="title">{{ __('admin.title') }}<span class="required">*</span></label>
+                                    <div class="col-md-6 col-sm-6">   <input class="form-control"  name="title" value="{{ old('title') }}" id="item_title" />
+                                   </div>
+                                 </div>
+
+
 
                                 <div class="field item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3  label-align"
@@ -53,7 +53,6 @@
                                         <textarea class="form-control" id="details" name="content">{{ old('details') }}</textarea>
                                     </div>
                                 </div>
-
 
                         </div>
                     </div>

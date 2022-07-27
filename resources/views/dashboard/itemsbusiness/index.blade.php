@@ -6,7 +6,7 @@
     <div class="">
       <div class="page-title">
         <div class="title_left">
-          <h3>{{ $title }}</h3>
+          <h3>  بنود الاعمال الرئيسية   </h3>
         </div>
 
         <div class="title_right">
@@ -28,10 +28,10 @@
       <div class="col-md-12 col-sm-12  ">
         <div class="x_panel">
           <div class="x_title">
-            <h2>{{ $title }} <small>{{ $title }}</small></h2>
+            <h2> بنود الاعمال الرئيسية  </h2>
             <ul class="nav navbar-right panel_toolbox">
               <li><a href="{{ aurl('BusinessItems/create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>
-                  {{ __('admin.BusinessItems') }}</a>
+                  أضافة بند عمل</a>
               </li>
             </ul>
 
@@ -49,12 +49,12 @@
                 <thead>
                   <tr class="headings">
                     <th class="column-title"># </th>
-                    <th class="column-title">{{ __('admin.title' ) }}</th>
-                    <th class="column-title">{{ __('admin.detail') }}</th>
+                    <th class="column-title">{{ 'العنوان' }}</th>
+                    <th class="column-title">{{  'المحتوي' }}</th>
 
-                     <th class="column-title">{{ __('admin.show Flashsales') }}</th>
+                     <th class="column-title">{{ 'عرض الاعمال الفرعية' }}</th>
 
-                    <th class="column-title no-link last"><span class="nobr">{{ __('admin.action') }}</span>
+                    <th class="column-title no-link last"><span class="nobr">{{ 'التحكم' }}</span>
                     </th>
 
                   </tr>
@@ -76,15 +76,15 @@
 
                       <td>
                         <a href="{{ aurl('LoadBusinessItemsUnits/' . $value->id  ) }}"
-                            class="btn btn-info">{{ trans('admin.BusinessItemsUnits') }}</a>
+                            class="btn btn-info">{{ 'عرض الاعمال الفرعية' }}</a>
                        </td>
 
 
                       <td class=" last">
                         <a data-toggle="modal" data-target=".bs-example-modal-lg{{ $value->id }}"
-                          class="btn btn-danger">{{ trans('admin.delete') }}</a>
+                          class="btn btn-danger">حذف</a>
                         <a href="{{ aurl('BusinessItems/' . $value->id . '/edit') }}"
-                          class="btn btn-info">{{ trans('admin.edit') }}</a> </a>
+                          class="btn btn-info">{{  'تعديل' }}</a> </a>
                       </td>
                     </tr>
 
@@ -94,7 +94,7 @@
                         <div class="modal-content">
 
                           <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                            <h4 class="modal-title" id="myModalLabel">حذف العنصر</h4>
                             <button type="button" class="close" data-dismiss="modal"><span
                                 aria-hidden="true">×</span>
                             </button>
@@ -105,13 +105,13 @@
                             @method('delete')
 
                             <div class="modal-body">
-                              <h4>{{ trans('admin.deleteCon') }}</h4>
-                              <p>{{ trans('admin.deleteMessageModal') . $value->id }}</p>
+                              <h4>تأكيد حذف العنصر</h4>
+                              <p>{{ 'حذف العنصر رقم : ' . $value->id }}</p>
                             </div>
                             <div class="modal-footer">
-                              <button type="submit" class="btn btn-danger">{{ trans('admin.confirm') }}</button>
+                              <button type="submit" class="btn btn-danger">تأكيد</button>
                               <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">{{ trans('admin.close') }}</button>
+                                data-dismiss="modal">غلق</button>
                             </div>
                           </form>
 

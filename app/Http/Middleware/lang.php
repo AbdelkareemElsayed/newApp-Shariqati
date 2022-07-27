@@ -15,14 +15,14 @@ class lang
      */
     public function handle($request, Closure $next)
     {
-        if (session()->has('lang')) {
-            app()->setLocale(session('lang'));
-        } else {
-            app()->setLocale('en');
+        // if (session()->has('lang')) {
+        //     app()->setLocale(session('lang'));
+        // } else {
+            app()->setLocale('ar');
 
-            # Set Session ... 
-            session()->put('lang', 'en');
-        }
+            # Set Session ...
+            session()->put('lang', 'ar');
+        //}
         return $next($request);
     }
 }
